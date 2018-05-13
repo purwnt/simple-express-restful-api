@@ -1,8 +1,8 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
 // User models lives here
-var User     = require('../models/users');
+const User     = require('../models/users');
 
 
 router.get('/', function(req, res, next) {
@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
 })
 
 router.post('/', function(req, res, next) {
-    var user = new User();		// create a new instance of the Bear model
+    const user = new User();		// create a new instance of the Bear model
 		user.name = req.body.name;  // set the bears name (comes from the request)
 
 		user.save(function(err) {
